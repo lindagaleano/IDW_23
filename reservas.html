@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de turnos</title>
+</head>
+<body>
+    <h1>Reserva tu turno</h1>
+
+    <form>
+        <label for="especialidad">Especialidad:</label>
+        <select id="especialidad" name="especialidad">
+            <option value="clinica">Clínica Médica</option>
+            <option value="pediatria">Pediatría</option>
+            <option value="cardiologia">Cardiología</option>
+        </select>
+        <br><br>
+
+        <label for="medico">Médico:</label>
+        <select id="medico" name="medico">
+            <option value="medico1">Dr. Facundo</option>
+            <option value="medico2">Dra. Michelle</option>
+            <option value="medico3">Dr. Linda</option>
+        </select>
+        <br><br>
+
+        <label for="obra">Obra Social:</label>
+        <input type="text" id="obra" name="obra">
+        <br><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha">
+        <br><br>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora">
+        <br><br>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <h2>Resumen del turno elegido</h2>
+    <table border="1">
+        <tr>
+            <th>Especialidad</th>
+            <th>Médico</th>
+            <th>Obra Social</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+        <tr>
+            <td>Cardiología</td>
+            <td>Dra. Michelle</td>
+            <td>OSDE</td>
+            <td>2025-09-08</td>
+            <td>09:30</td>
+        </tr>
+        <tr>
+            <td>Pediatría</td>
+            <td>Dr. Ignacio</td>
+            <td>Swiss Medical</td>
+            <td>2025-09-08</td>
+            <td>10:00</td>
+        </tr>
+        <tr>
+            <td>Clínica Médica</td>
+            <td>Dr. Facundo</td>
+            <td>PAMI</td>
+            <td>2025-09-08</td>
+            <td>10:30</td>
+        </tr>
+        <tr>
+            <td>Cardiología</td>
+            <td>Dr. Ignacio</td>
+            <td>Medife</td>
+            <td>2025-09-8</td>
+            <td>08:30</td>
+        </tr>
+        <tr>
+            <td>Pediatría</td>
+            <td>Dra. Michelle</td>
+            <td>Galeno</td>
+            <td>2025-09-28</td>
+            <td>08:00</td>
+        </tr>
+    </table>
+</body>
+</html>
+<footer>
+<p>&copy; 2025 Clínica Buena Salud. Todos los derechos reservados.</p>
+</footer>
