@@ -1,6 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+rama-MichelleO
+    background-color: #f4f4f4; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.section-heading {
+    color: #005a87 !important; 
+
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -47,10 +57,27 @@ section {
 
 section h2 {
     color: #005a87;
+main
     border-bottom: 2px solid #005a87;
     padding-bottom: 5px;
 }
 
+rama-MichelleO
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color hover de Linda */
+    border-color: #0056b3;
+}
+
+.bg-white {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+=======
 input[type="text"],
 input[type="email"],
 textarea {
@@ -88,3 +115,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+main
