@@ -96,3 +96,4 @@ window.eliminar = (i) => {
     renderTabla();
   }
 };
+renderTabla();
