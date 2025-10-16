@@ -6,7 +6,7 @@ if (localStorage.getItem("sesionActiva") !== "true") {
 
 document.getElementById("cerrarSesion").addEventListener("click", () => {
   localStorage.removeItem("sesionActiva");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 
@@ -96,6 +96,3 @@ window.eliminar = (i) => {
     renderTabla();
   }
 };
-
-
-renderTabla();
