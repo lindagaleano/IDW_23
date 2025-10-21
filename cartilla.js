@@ -1,25 +1,21 @@
-const contenedor = document.getElementById("contenedorMedicos");
+const cuerpo = document.getElementById("cuerpoTabla");
 const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
 
 if (medicos.length === 0) {
-  contenedor.innerHTML = `<p class="text-center">No hay médicos registrados.</p>`;
+  cuerpo.innerHTML = `<tr><td colspan="8" class="text-center">No hay médicos registrados.</td></tr>`;
 } else {
   medicos.forEach((m) => {
-    const card = document.createElement("div");
-    card.className = "col-md-4 mb-4";
-    card.innerHTML = `
-      <div class="card shadow-sm h-100">
-        <div class="card-body">
-          <h5>${m.nombre} ${m.apellido}</h5>
-          <p><strong>Especialidad:</strong> ${m.especialidad}</p>
-          <p><strong>Matrícula:</strong> ${m.matricula}</p>
-          <p><strong>Teléfono:</strong> ${m.telefono || "-"}</p>
-          <p><strong>Email:</strong> ${m.email || "-"}</p>
-          <p><strong>Obra Social:</strong> ${m.obraSocial || "-"}</p>
-          <p><strong>Valor consulta:</strong> $${m.valor || 0}</p>
-          <td><img src="${m.foto || 'placeholder.png'}" class="foto-perfil"></td>
-        </div>
-      </div>`;
-    contenedor.appendChild(card);
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td><img src="${m.foto || 'placeholder.png'}" class="foto-perfil" alt="Foto de ${m.nombre}"></td>
+      <td>${m.nombre} ${m.apellido}</td>
+      <td>${m.especialidad}</td>
+      <td>${m.matricula}</td>
+      <td>${m.telefono || '-'}</td>
+      <td>${m.email || '-'}</td>
+      <td>${m.obraSocial || '-'}</td>
+      <td>$${m.valor || 0}</td>
+    `;
+    cuerpo.appendChild(fila);
   });
 }
