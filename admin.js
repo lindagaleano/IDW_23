@@ -28,7 +28,7 @@ const selectEspecialidad = document.getElementById("selectEspecialidad");
 let medicos = JSON.parse(localStorage.getItem("medicos")) || [];
 let especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
 
-// Si no hay especialidades guardadas, cargar por defecto
+
 if (especialidades.length === 0) {
   especialidades = [
     { nombre: "Cardiología" },
@@ -202,7 +202,7 @@ window.editarTurno = (i) => {
   const nuevaHora = prompt("Nueva hora (HH:MM):", turno.hora);
 
   if (!nuevaEspecialidad || !nuevoMedico || !nuevaFecha || !nuevaHora) {
-    alert("⚠️ Datos inválidos o cancelado.");
+    alert("⚠️ Datos inválidos.");
     return;
   }
 
