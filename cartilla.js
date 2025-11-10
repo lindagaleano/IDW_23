@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nombre: "Ana",
       apellido: "Gómez",
-      especialidad: "Pediatría",
+      especialidad: "Cardiologia",
       matricula: "12345",
       obraSocial: "OSDE",
       telefono: "011-1234-5678",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       nombre: "María",
       apellido: "Rodríguez",
-      especialidad: "Dermatología",
+      especialidad: "Cirugia",
       matricula: "54321",
       obraSocial: "Galeno",
       telefono: "011-5555-9999",
