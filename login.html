@@ -1,0 +1,78 @@
+<!<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión - Clínica Buena Salud</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    main {
+      flex: 1; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Logo clínica.png" alt="Clínica Buena Salud" width="100" height="100" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link active" href="login.html">Alta médico</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO CENTRAL -->
+  <main>
+    <div class="card shadow p-4">
+      <h3 class="text-center mb-3">Iniciar Sesión</h3>
+      <form id="formLogin">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" id="usuario" class="form-control" name="usuario" required>
+          
+        </div>
+        <div class="mb-3">
+          <label for="clave" class="form-label">Contraseña</label>
+          
+          <input type="password" id="clave" class="form-control" required>
+          
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p class="mb-0">&copy; 2025 Clínica Buena Salud. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
