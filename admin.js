@@ -25,9 +25,64 @@ const form = document.getElementById("formMedico");
 const tbody = document.getElementById("tablaMedicos");
 const selectEspecialidad = document.getElementById("selectEspecialidad");
 
-let medicos = JSON.parse(localStorage.getItem("medicos")) || [];
-let especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
+// --- Médicos fijos ---
+const medicosFijos = [
+  {
+    nombre: "Ana",
+    apellido: "Gómez",
+    especialidad: "Cardiología",
+    matricula: "12345",
+    obraSocial: "OSDE",
+    telefono: "011-1234-5678",
+    email: "ana.gomez@clinica.com",
+    valor: 20000,
+    foto: "img/medica1.jpg"
+  },
+  {
+    nombre: "Juan",
+    apellido: "Pérez",
+    especialidad: "Cardiología",
+    matricula: "67890",
+    obraSocial: "Swiss Medical",
+    telefono: "011-8765-4321",
+    email: "juan.perez@clinica.com",
+    valor: 30000,
+    foto: "img/medico4.jpg"
+  },
+  {
+    nombre: "María",
+    apellido: "Rodríguez",
+    especialidad: "Cirugía",
+    matricula: "54321",
+    obraSocial: "Galeno",
+    telefono: "011-5555-9999",
+    email: "maria.rodriguez@clinica.com",
+    valor: 30000,
+    foto: "img/medica3.jpg"
+  }
+];
 
+// --- Cargar del localStorage y unir con los fijos ---
+let medicosGuardados = JSON.parse(localStorage.getItem("medicos")) || [];
+
+// Evitar duplicados (por matrícula)
+const matriculasExistentes = new Set(medicosGuardados.map(m => m.matricula));
+
+
+medicosFijos.forEach(m => {
+  if (!matriculasExistentes.has(m.matricula)) {
+    medicosGuardados.push(m);
+  }
+});
+
+let medicos = medicosGuardados;
+
+
+// Guardar actualizada
+localStorage.setItem("medicos", JSON.stringify(medicos));
+
+// --- Especialidades ---
+let especialidades = JSON.parse(localStorage.getItem("especialidades")) || [];
 
 if (especialidades.length === 0) {
   especialidades = [
@@ -50,10 +105,6 @@ function guardarMedicos() {
   localStorage.setItem("medicos", JSON.stringify(medicos));
 }
 
-function guardarEspecialidades() {
-  localStorage.setItem("especialidades", JSON.stringify(especialidades));
-}
-
 function cargarEspecialidadesEnSelect() {
   if (!selectEspecialidad) return;
   selectEspecialidad.innerHTML = `<option value="">Seleccionar especialidad...</option>`;
@@ -70,7 +121,7 @@ function renderTabla() {
   medicos.forEach((m, i) => {
     const fila = document.createElement("tr");
     fila.innerHTML = `
-      <td><img src="${m.foto || 'placeholder.png'}" class="foto-perfil" alt="foto"></td>
+      <td><img src="${m.foto || 'img/placeholder.png'}" class="foto-perfil" alt="foto"></td>
       <td>${m.nombre}</td>
       <td>${m.apellido}</td>
       <td>${m.especialidad || '-'}</td>
@@ -146,14 +197,9 @@ window.eliminar = (i) => {
 // =============================
 function renderTurnos() {
   const tablaTurnos = document.getElementById("tabla-turnos");
-  if (!tablaTurnos) {
-    console.warn(" No se encontró la tabla de turnos en DOmM.");
-    return;
-  }
+  if (!tablaTurnos) return;
 
   const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-  console.log("Turnos cargados desde localStorage:", turnos);
-
   tablaTurnos.innerHTML = "";
 
   if (turnos.length === 0) {
@@ -171,7 +217,6 @@ function renderTurnos() {
       <td>${t.medico || "-"}</td>
       <td>${t.obra || "-"}</td>
       <td>${t.fecha ? new Date(t.fecha).toLocaleDateString("es-AR") : "-"}</td>
-
       <td>${t.hora || "-"}</td>
       <td>
         <button class="btn btn-sm btn-warning" onclick="editarTurno(${i})">Editar</button>
@@ -220,10 +265,10 @@ window.editarTurno = (i) => {
 };
 
 // =============================
-// 
+// Inicialización
 // =============================
 document.addEventListener("DOMContentLoaded", () => {
   cargarEspecialidadesEnSelect();
   renderTabla();
-  renderTurnos(); 
+  renderTurnos();
 });

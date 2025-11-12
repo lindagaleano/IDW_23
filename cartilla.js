@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       telefono: "011-1234-5678",
       email: "ana.gomez@clinica.com",
       valor: 20000,
-      foto: "/medica1.jpg"
+      foto: "img/medica1.jpg"
     },
     {
       nombre: "Juan",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       telefono: "011-8765-4321",
       email: "juan.perez@clinica.com",
       valor: 30000,
-      foto: "/medico4.jpg"
+      foto: "img/medico4.jpg"
     },
     {
       nombre: "María",
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       telefono: "011-5555-9999",
       email: "maria.rodriguez@clinica.com",
       valor: 30000,
-      foto: "/medica3.jpg"
+      foto: "img/medica3.jpg"
     }
   ];
 
